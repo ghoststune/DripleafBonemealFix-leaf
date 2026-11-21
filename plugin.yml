@@ -1,0 +1,7 @@
+name: DripleafBonemealFix
+version: 1.0.0
+main: com.ghosttune.dripleafbonemealfix.DripleafBonemealFix
+api-version: '1.21'
+description: 'Fixes the 1.21.11 bone meal + dripleaf crash (IllegalArgumentException: Cannot get property half in Block minecraft:water). Cancels the crashing bonemeal path and safely grows the big dripleaf, also preventing the related duplication glitch.'
+author: ghosttune
+website: ''

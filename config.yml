@@ -1,0 +1,24 @@
+# DripleafBonemealFix configuration
+#
+# Fixes the 1.21.11 "bone meal + small dripleaf" crash:
+#   IllegalArgumentException: Cannot get property 'half' ... in Block{minecraft:water}
+# Crash form = bone meal used on a small_dripleaf with half=UPPER(TOP) whose
+# block below is NOT a small_dripleaf with half=LOWER(BOTTOM).
+# In that form vanilla recurses downwards and reads HALF from water/air, which throws.
+
+# Simulate growth (full guard mode):
+#   true  -> cancel bone meal on ALL small dripleaf and grow big dripleaf safely (default)
+#   false -> only cancel the crash form, let vanilla handle the legal cases
+simulate-growth: true
+
+# Guard bone meal fired by dispensers (same crash form).
+guard-dispenser: true
+
+# Log every trigger (player name / position / block below).
+log-triggers: true
+
+# Debug: log every BlockDispenseEvent (item + dispenser position).
+debug-dispense: true
+
+# Debug: log block physics events that touch small_dripleaf (position + state).
+debug-physics: true
